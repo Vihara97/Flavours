@@ -1,13 +1,14 @@
 //
-//  ContentView.swift
+//  SignUpView.swift
 //  Flavours
 //
-//  Created by Vihara Karunarathna on 1/15/23.
+//  Created by Vihara Karunarathna on 1/26/23.
 //
 
 import SwiftUI
+import Firebase
 
-struct ContentView: View {
+struct SignUpView: View {
     @State private var email = ""
     @State private var password = ""
     
@@ -48,9 +49,23 @@ struct ContentView: View {
                 Rectangle()
                     .frame(width: 350, height: 1)
                     .foregroundColor(.black)
+                   
+                
+                Button(action: register) {
+                    Text("Sign up")
+                        .bold()
+                        .foregroundColor(.black)
+                        .frame(width: 200, height: 40)
+                        .background(
+                            RoundedRectangle(cornerRadius: 15, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/).foregroundColor(.pink)
+                        )
+                }
+                .padding(.top)
+                .offset(y: 100)
+                .contentShape(Rectangle())
                 
                 Button {
-                    print("Button pressed")
+                    register()
                 } label: {
                     Text("Sign up")
                         .bold()
@@ -65,7 +80,7 @@ struct ContentView: View {
                 .contentShape(Rectangle())
                 
                 Button {
-                    print("Button pressed")
+                    login()
                 } label: {
                     Text("Already have an account? Sign in")
                         .bold()
@@ -80,16 +95,33 @@ struct ContentView: View {
         }
         .ignoresSafeArea()
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    
+    func login(){
+        Auth.auth().signIn(withEmail: email, password: password){result, error in
+            if error != nil{
+                print(error!.localizedDescription)
+            }
+            
+        }
+    }
+    
+    func register(){
+        Auth.auth().createUser(withEmail: email, password: password){result, error in
+            if error != nil{
+                print(error!.localizedDescription)
+            }
+            
+        }
     }
 }
-
+struct SignUpView_Previews: PreviewProvider {
+    static var previews: some View {
+        SignUpView()
+    }
+}
+    
 extension View {
-    func placeholder<Content: View>(
+    func Placeholder<Content: View>(
         when shouldShow: Bool,
         alignment: Alignment = .leading,
         @ViewBuilder placeholder: () -> Content) -> some View {
@@ -100,3 +132,4 @@ extension View {
         }
     }
 }
+
