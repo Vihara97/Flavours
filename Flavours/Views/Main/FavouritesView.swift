@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  FavouritesView.swift
 //  Flavours
 //
 //  Created by Vihara Karunarathna on 1/26/23.
@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct FavouritesView: View {
     var body: some View {
         NavigationView {
-            Text("Flavours")
+            Text("Favourites")
                 .padding()
-                .navigationTitle("Flavours")
+                .navigationTitle("Favourites")
         }
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct FavouritesView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        FavouritesView()
     }
 }

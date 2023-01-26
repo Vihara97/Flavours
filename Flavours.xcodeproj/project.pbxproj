@@ -19,6 +19,7 @@
 		DCBADC4C297F1DEA00CBD510 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = DCBADC4B297F1DEA00CBD510 /* FirebaseCrashlytics */; };
 		DCBADC4E297F1DEA00CBD510 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DCBADC4D297F1DEA00CBD510 /* FirebaseAuth */; };
 		DCBADC50297F1DEA00CBD510 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DCBADC4F297F1DEA00CBD510 /* FirebaseFirestore */; };
+		DCD3BC362982F7FB00AFA899 /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD3BC352982F7FB00AFA899 /* FavouritesView.swift */; };
 		DCD54A662982AA10001F4F68 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD54A652982AA10001F4F68 /* TabBar.swift */; };
 		DCD54A6B2982ADF7001F4F68 /* FoodDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD54A6A2982ADF7001F4F68 /* FoodDetailsView.swift */; };
 		DCE8FF4629818BED00DA6F07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCBADC54297F1FDB00CBD510 /* GoogleService-Info.plist */; };
@@ -57,6 +58,7 @@
 		DCB4DB5D2973F14700C32CF8 /* FlavoursUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavoursUITests.swift; sourceTree = "<group>"; };
 		DCB4DB5F2973F14700C32CF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCBADC54297F1FDB00CBD510 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DCD3BC352982F7FB00AFA899 /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
 		DCD54A652982AA10001F4F68 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		DCD54A6A2982ADF7001F4F68 /* FoodDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +122,7 @@
 				DCA5170E29827B7A00CC9B28 /* HomeView.swift */,
 				DCA5171329827CD800CC9B28 /* SignUpView.swift */,
 				DCD54A652982AA10001F4F68 /* TabBar.swift */,
+				DCD3BC352982F7FB00AFA899 /* FavouritesView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				DCA5170F29827B7A00CC9B28 /* HomeView.swift in Sources */,
 				DCB4DB432973F14600C32CF8 /* ContentView.swift in Sources */,
 				DCB4DB412973F14600C32CF8 /* FlavoursApp.swift in Sources */,
+				DCD3BC362982F7FB00AFA899 /* FavouritesView.swift in Sources */,
 				DCD54A662982AA10001F4F68 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

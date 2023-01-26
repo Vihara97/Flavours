@@ -12,11 +12,15 @@ struct TabBar: View {
         TabView{
             HomeView()
                 .tabItem {
-                    Image(systemName: "House")
+                    Image(systemName: "house")
                     Text("Home")
                 }
             
-            FoodDetailsView()
+            FavouritesView()
+                .tabItem {
+                    Image(systemName: "heart")
+                    Text("Favourites")
+                }
         }
     }
 }

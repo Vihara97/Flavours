@@ -30,39 +30,18 @@ struct SignUpView: View {
                 
                 TextField("Email", text: $email)
                     .foregroundColor(.black)
-                    .placeholder(when: email.isEmpty){
-                        Text("Email")
-                            .foregroundColor(.black)
-                            .bold()
-                    }
+
                 Rectangle()
                     .frame(width: 350, height: 1)
                     .foregroundColor(.black)
                 
                 SecureField("Password", text:$password)
                     .foregroundColor(.black)
-                    .placeholder(when: password.isEmpty){
-                        Text("Password")
-                            .foregroundColor(.black)
-                            .bold()
-                    }
+
                 Rectangle()
                     .frame(width: 350, height: 1)
                     .foregroundColor(.black)
                    
-                
-                Button(action: register) {
-                    Text("Sign up")
-                        .bold()
-                        .foregroundColor(.black)
-                        .frame(width: 200, height: 40)
-                        .background(
-                            RoundedRectangle(cornerRadius: 15, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/).foregroundColor(.pink)
-                        )
-                }
-                .padding(.top)
-                .offset(y: 100)
-                .contentShape(Rectangle())
                 
                 Button {
                     register()
