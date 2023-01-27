@@ -8,12 +8,21 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @ObservedObject var model = HomeViewModel()
+    
     var body: some View {
         NavigationView {
-            Text("Flavours")
-                .padding()
+            
+            List(model.list){ dish in
+                Text(dish.name)
+            }
                 .navigationTitle("Flavours")
         }
+    }
+    
+    init() {
+        model.getDishDetails()
     }
 }
 

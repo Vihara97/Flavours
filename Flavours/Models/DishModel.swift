@@ -18,7 +18,7 @@ enum Category: String {
 }
 
 struct Dish : Identifiable {
-    let id: UUID
+    let id = UUID()
     let name: String
     let image: String
     let description: String
