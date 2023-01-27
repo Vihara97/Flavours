@@ -51,11 +51,12 @@ struct SignUpView: View {
                         .foregroundColor(.black)
                         .frame(width: 200, height: 40)
                         .background(
-                            RoundedRectangle(cornerRadius: 15, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/).foregroundColor(.pink)
+                            RoundedRectangle(cornerRadius: 15, style: .circular).foregroundColor(.pink)
                         )
                 }
+                
                 .padding(.top)
-                .offset(y: 100)
+                //.offset(y: 100)
                 .contentShape(Rectangle())
                 
                 Button {
