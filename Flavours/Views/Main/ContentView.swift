@@ -9,13 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var body: some View {
-
-        TabBar()
-                
-        }
-    }
+    @StateObject var model = HomeViewModel()
     
+    var body: some View {
+        VStack {
+            TabBar()
+                .environmentObject(model)
+        }
+        
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

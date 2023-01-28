@@ -10,6 +10,7 @@ import Firebase
 
 @main
 struct FlavoursApp: App {
+    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {
@@ -20,6 +21,8 @@ struct FlavoursApp: App {
 }
 
 class AppDelegate: NSObject, UIApplicationDelegate {
+    
+  //configure firebase
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     FirebaseApp.configure()

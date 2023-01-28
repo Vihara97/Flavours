@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC77E41A298448A2004DEDE0 /* DishCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC77E419298448A2004DEDE0 /* DishCardView.swift */; };
 		DCA5170F29827B7A00CC9B28 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5170E29827B7A00CC9B28 /* HomeView.swift */; };
 		DCA5171429827CD800CC9B28 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5171329827CD800CC9B28 /* SignUpView.swift */; };
 		DCA99CDC2983C7390014563A /* DishDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA99CDB2983C7390014563A /* DishDetailsView.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC77E419298448A2004DEDE0 /* DishCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCardView.swift; sourceTree = "<group>"; };
 		DCA5170E29827B7A00CC9B28 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DCA5171329827CD800CC9B28 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		DCA99CDB2983C7390014563A /* DishDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailsView.swift; sourceTree = "<group>"; };
@@ -96,9 +98,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC77E41829844867004DEDE0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DC77E419298448A2004DEDE0 /* DishCardView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		DCA516F6298274FB00CC9B28 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DC77E41829844867004DEDE0 /* Components */,
 				DCA516FA2982762E00CC9B28 /* Details */,
 				DCA516F92982762300CC9B28 /* Main */,
 			);
@@ -347,6 +358,7 @@
 				DCA5170F29827B7A00CC9B28 /* HomeView.swift in Sources */,
 				DCA99CE42983C79E0014563A /* DishModel.swift in Sources */,
 				DCB4DB432973F14600C32CF8 /* ContentView.swift in Sources */,
+				DC77E41A298448A2004DEDE0 /* DishCardView.swift in Sources */,
 				DCB4DB412973F14600C32CF8 /* FlavoursApp.swift in Sources */,
 				DCD3BC362982F7FB00AFA899 /* FavouritesView.swift in Sources */,
 				DCD54A662982AA10001F4F68 /* TabBar.swift in Sources */,

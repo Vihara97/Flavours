@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TabBar: View {
+    
+    @EnvironmentObject var model : HomeViewModel
+    
     var body: some View {
         TabView{
             HomeView()
@@ -16,7 +19,7 @@ struct TabBar: View {
                     Text("Home")
                 }
             
-            SignUpView()
+            DishCardView()
                 .tabItem {
                     Image(systemName: "heart")
                     Text("Favourites")
@@ -28,6 +31,7 @@ struct TabBar: View {
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()
+            .environmentObject(HomeViewModel())
     }
 }
 

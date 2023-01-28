@@ -30,18 +30,18 @@ struct SignUpView: View {
                 
                 TextField("Email", text: $email)
                     .foregroundColor(.black)
-
+                
                 Rectangle()
                     .frame(width: 350, height: 1)
                     .foregroundColor(.black)
                 
                 SecureField("Password", text:$password)
                     .foregroundColor(.black)
-
+                
                 Rectangle()
                     .frame(width: 350, height: 1)
                     .foregroundColor(.black)
-                   
+                
                 
                 Button {
                     register()
@@ -71,7 +71,7 @@ struct SignUpView: View {
                 .contentShape(Rectangle())
             }
             .frame(width: 350)
-                
+            
         }
         .ignoresSafeArea()
     }
@@ -99,13 +99,13 @@ struct SignUpView_Previews: PreviewProvider {
         SignUpView()
     }
 }
-    
+
 extension View {
     func Placeholder<Content: View>(
         when shouldShow: Bool,
         alignment: Alignment = .leading,
         @ViewBuilder placeholder: () -> Content) -> some View {
-
+        
         ZStack(alignment: alignment) {
             placeholder().opacity(shouldShow ? 1 : 0)
             self
