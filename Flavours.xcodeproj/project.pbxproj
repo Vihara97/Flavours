@@ -22,6 +22,7 @@
 		DCBADC4C297F1DEA00CBD510 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = DCBADC4B297F1DEA00CBD510 /* FirebaseCrashlytics */; };
 		DCBADC4E297F1DEA00CBD510 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DCBADC4D297F1DEA00CBD510 /* FirebaseAuth */; };
 		DCBADC50297F1DEA00CBD510 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DCBADC4F297F1DEA00CBD510 /* FirebaseFirestore */; };
+		DCCDD7692986ECE800EE533C /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = DCCDD7682986ECE800EE533C /* URLImage */; };
 		DCD3BC362982F7FB00AFA899 /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD3BC352982F7FB00AFA899 /* FavouritesView.swift */; };
 		DCD54A662982AA10001F4F68 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD54A652982AA10001F4F68 /* TabBar.swift */; };
 		DCD5FFCA2984098F0082D440 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD5FFC92984098F0082D440 /* HomeViewModel.swift */; };
@@ -77,6 +78,7 @@
 				DCBADC4A297F1DEA00CBD510 /* FirebaseAnalytics in Frameworks */,
 				DCBADC50297F1DEA00CBD510 /* FirebaseFirestore in Frameworks */,
 				DCBADC4E297F1DEA00CBD510 /* FirebaseAuth in Frameworks */,
+				DCCDD7692986ECE800EE533C /* URLImage in Frameworks */,
 				DCBADC4C297F1DEA00CBD510 /* FirebaseCrashlytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +236,7 @@
 				DCBADC4B297F1DEA00CBD510 /* FirebaseCrashlytics */,
 				DCBADC4D297F1DEA00CBD510 /* FirebaseAuth */,
 				DCBADC4F297F1DEA00CBD510 /* FirebaseFirestore */,
+				DCCDD7682986ECE800EE533C /* URLImage */,
 			);
 			productName = Flavours;
 			productReference = DCB4DB3D2973F14600C32CF8 /* Flavours.app */;
@@ -308,6 +311,7 @@
 			mainGroup = DCB4DB342973F14600C32CF8;
 			packageReferences = (
 				DCBADC48297F1DEA00CBD510 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				DCCDD7672986ECE800EE533C /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = DCB4DB3E2973F14600C32CF8 /* Products */;
 			projectDirPath = "";
@@ -689,6 +693,14 @@
 				minimumVersion = 8.1.0;
 			};
 		};
+		DCCDD7672986ECE800EE533C /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -711,6 +723,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DCBADC48297F1DEA00CBD510 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		DCCDD7682986ECE800EE533C /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCCDD7672986ECE800EE533C /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
