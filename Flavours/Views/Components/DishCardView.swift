@@ -19,7 +19,7 @@ struct DishCardView: View {
             
             if(dishModel.list.count > 0){
                 
-                let dish = dishModel.list[0]
+                let dish = dishModel.list[8]
                 let imgUrl: URL = URL(string: dish.image)!
                 
                 URLImage(imgUrl) { image in

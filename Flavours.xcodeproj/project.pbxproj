@@ -23,6 +23,7 @@
 		DCBADC4E297F1DEA00CBD510 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DCBADC4D297F1DEA00CBD510 /* FirebaseAuth */; };
 		DCBADC50297F1DEA00CBD510 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DCBADC4F297F1DEA00CBD510 /* FirebaseFirestore */; };
 		DCCDD7692986ECE800EE533C /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = DCCDD7682986ECE800EE533C /* URLImage */; };
+		DCCDD77A2986FC8C00EE533C /* DishesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCDD7792986FC8C00EE533C /* DishesListView.swift */; };
 		DCD3BC362982F7FB00AFA899 /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD3BC352982F7FB00AFA899 /* FavouritesView.swift */; };
 		DCD54A662982AA10001F4F68 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD54A652982AA10001F4F68 /* TabBar.swift */; };
 		DCD5FFCA2984098F0082D440 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD5FFC92984098F0082D440 /* HomeViewModel.swift */; };
@@ -65,6 +66,7 @@
 		DCB4DB5D2973F14700C32CF8 /* FlavoursUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavoursUITests.swift; sourceTree = "<group>"; };
 		DCB4DB5F2973F14700C32CF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCBADC54297F1FDB00CBD510 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DCCDD7792986FC8C00EE533C /* DishesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesListView.swift; sourceTree = "<group>"; };
 		DCD3BC352982F7FB00AFA899 /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
 		DCD54A652982AA10001F4F68 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		DCD5FFC92984098F0082D440 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				DC77E419298448A2004DEDE0 /* DishCardView.swift */,
+				DCCDD7792986FC8C00EE533C /* DishesListView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				DCD5FFCA2984098F0082D440 /* HomeViewModel.swift in Sources */,
 				DCA99CDC2983C7390014563A /* DishDetailsView.swift in Sources */,
 				DCA5170F29827B7A00CC9B28 /* HomeView.swift in Sources */,
+				DCCDD77A2986FC8C00EE533C /* DishesListView.swift in Sources */,
 				DCA99CE42983C79E0014563A /* DishModel.swift in Sources */,
 				DCB4DB432973F14600C32CF8 /* ContentView.swift in Sources */,
 				DC77E41A298448A2004DEDE0 /* DishCardView.swift in Sources */,

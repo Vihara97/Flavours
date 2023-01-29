@@ -13,9 +13,8 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            
-            List(model.list){ dish in
-                Text(dish.name)
+            ScrollView {
+                DishesListView(dishModel : model)
             }
             .navigationTitle("Flavours")
         }
