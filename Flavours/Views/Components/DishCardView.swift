@@ -14,26 +14,33 @@ struct DishCardView: View {
     @EnvironmentObject var model : HomeViewModel
     
     var body: some View {
-        
-        let imgurl: URL = URL(string: "https://www.seriouseats.com/thmb/ydRx2uJ9KWLplPH6FOnPuvta1gw=/750x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__20120525-grilled-side-dishes-appetizers-memorial-day-09-07de349927bb4dd187546f9b5b7eec07.jpeg")!
             
-        NavigationView {
-            
-            URLImage(imgurl) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            }
-            
+        VStack {
             
             if(dishModel.list.count > 0){
-                Text(dishModel.list[0].name)
-            }else{
-                Text("loading")
+                
+                let dish = dishModel.list[0]
+                let imgUrl: URL = URL(string: dish.image)!
+                
+                URLImage(imgUrl) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .overlay(Text(dish.name)
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 3, x: 0, y: 0)
+                                    .frame(maxWidth: 140)
+                                    .padding()
+                                 , alignment: .bottom)
+                }
+                
             }
             
-            
         }
+        .frame(width: 160, height: 217, alignment: .top)
+        .background(LinearGradient(gradient: Gradient(colors: [Color.gray, Color.gray]), startPoint: .top, endPoint: .bottom))
+        .clipShape(RoundedRectangle(cornerRadius: 18, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
         .environmentObject(dishModel)
     }
     
