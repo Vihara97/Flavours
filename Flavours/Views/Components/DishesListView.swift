@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct DishesListView: View {
     
@@ -14,13 +15,36 @@ struct DishesListView: View {
     
     var body: some View {
         
-        let dishes = dishModel.list
-        
         VStack {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15,
                       content: {
-                        ForEach(dishes){dish in
-                            DishCardView(dishModel: dishModel)
+                        //loop through dishes
+                        ForEach(self.dishModel.list){dish in
+                            VStack {
+                                
+                                if(dishModel.list.count > 0){
+                                    
+                                    let imgUrl: URL = URL(string: dish.image)!
+                                    
+                                    URLImage(imgUrl) { image in
+                                        image
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .overlay(Text(dish.name)
+                                                        .font(.headline)
+                                                        .foregroundColor(.white)
+                                                        .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 3, x: 0, y: 0)
+                                                        .frame(maxWidth: 140)
+                                                        .padding()
+                                                     , alignment: .bottom)
+                                    }
+                                    
+                                }
+                                
+                            }
+                            .frame(width: 160, height: 217, alignment: .top)
+                            .background(LinearGradient(gradient: Gradient(colors: [Color.gray, Color.gray]), startPoint: .top, endPoint: .bottom))
+                            .clipShape(RoundedRectangle(cornerRadius: 18, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
                         }
                       })
                 .padding(.top)
