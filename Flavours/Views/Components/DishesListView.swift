@@ -20,31 +20,37 @@ struct DishesListView: View {
                       content: {
                         //loop through dishes
                         ForEach(self.dishModel.list){dish in
-                            VStack {
+                            NavigationLink(
+                                //DishDetails
+                                destination: DishDetailsView(dishModel : dishModel)){
                                 
-                                if(dishModel.list.count > 0){
-                                    
-                                    let imgUrl: URL = URL(string: dish.image)!
-                                    
-                                    URLImage(imgUrl) { image in
-                                        image
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fill)
-                                            .overlay(Text(dish.name)
-                                                        .font(.headline)
-                                                        .foregroundColor(.white)
-                                                        .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 3, x: 0, y: 0)
-                                                        .frame(maxWidth: 140)
-                                                        .padding()
-                                                     , alignment: .bottom)
+                                //DishCard
+                                VStack {
+                                    if(dishModel.list.count > 0){
+                                        
+                                        let imgUrl: URL = URL(string: dish.image)!
+                                        
+                                        URLImage(imgUrl) { image in
+                                            image
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fill)
+                                                .overlay(Text(dish.name)
+                                                            .font(.headline)
+                                                            .foregroundColor(.white)
+                                                            .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 3, x: 0, y: 0)
+                                                            .frame(maxWidth: 140)
+                                                            .padding()
+                                                         , alignment: .bottom)
+                                        }
+                                        
                                     }
                                     
                                 }
-                                
+                                .frame(width: 160, height: 217, alignment: .top)
+                                .background(LinearGradient(gradient: Gradient(colors: [Color.gray, Color.gray]), startPoint: .top, endPoint: .bottom))
+                                .clipShape(RoundedRectangle(cornerRadius: 18, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
                             }
-                            .frame(width: 160, height: 217, alignment: .top)
-                            .background(LinearGradient(gradient: Gradient(colors: [Color.gray, Color.gray]), startPoint: .top, endPoint: .bottom))
-                            .clipShape(RoundedRectangle(cornerRadius: 18, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
+
                         }
                       })
                 .padding(.top)

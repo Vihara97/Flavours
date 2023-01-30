@@ -13,7 +13,7 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: true) {
+            ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false) {
                 DishesListView(dishModel : model)
             }
             .navigationTitle("Flavours")
