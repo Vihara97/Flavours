@@ -30,7 +30,8 @@ class HomeViewModel : ObservableObject {
                                         image: doc["image"] as? String ?? "",
                                         description: doc["description"] as? String ?? "",
                                         noOfCalories: doc["noOfCalories"] as? String ?? "",
-                                        dishCategory: doc["dishCategory"] as? String ?? "")
+                                        dishCategory: doc["dishCategory"] as? String ?? "",
+                                        isFaved: doc["isFaved"] as? Bool ?? false)
                         }
                     }
                     

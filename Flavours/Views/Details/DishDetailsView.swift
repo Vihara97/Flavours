@@ -17,7 +17,7 @@ struct DishDetailsView: View{
         ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false){
                 if(dishModel.list.count > 0){
                     
-                    let dish = dishModel.list[0]
+                    let dish = dishModel.list[5]
                     let imgUrl: URL = URL(string: dish.image)!
                     
                     URLImage(imgUrl) { image in
@@ -27,6 +27,7 @@ struct DishDetailsView: View{
                     }
                     .frame(height: 500)
                     .background(LinearGradient(gradient: Gradient(colors: [Color.gray, Color.gray]), startPoint: .top, endPoint: .bottom))
+                    
                     
                     VStack(spacing: 20){
                         Text(dish.name)
@@ -52,6 +53,14 @@ struct DishDetailsView: View{
                                     .font(.body)
                                     .frame(maxWidth: 380, alignment: .leading)
                             }
+                        }
+                        
+                        VStack{
+                            Image(systemName: dish.isFaved ? "heart.fill" : "heart")
+                                .font(.system(size: 35))
+                                .onTapGesture{
+                                    let isFaved = dish.isFaved ?? true
+                                }
                         }
                     }
                     .padding(.horizontal)
