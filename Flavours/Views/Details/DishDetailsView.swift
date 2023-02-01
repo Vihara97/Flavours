@@ -17,13 +17,14 @@ struct DishDetailsView: View{
         ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false){
                 if(dishModel.list.count > 0){
                     
-                    let dish = dishModel.list[5]
+                    let dish = dishModel.list[0]
                     let imgUrl: URL = URL(string: dish.image)!
                     
                     URLImage(imgUrl) { image in
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
+                        
                     }
                     .frame(height: 500)
                     .background(LinearGradient(gradient: Gradient(colors: [Color.gray, Color.gray]), startPoint: .top, endPoint: .bottom))
@@ -55,13 +56,23 @@ struct DishDetailsView: View{
                             }
                         }
                         
-                        VStack{
-                            Image(systemName: dish.isFaved ? "heart.fill" : "heart")
-                                .font(.system(size: 35))
-                                .onTapGesture{
-                                    let isFaved = dish.isFaved ?? true
-                                }
-                        }
+                            VStack{
+                                Text("# " + dish.dishCategory)
+                                    .font(.headline)
+                                    .frame(maxWidth: 380, alignment: .leading)
+                            }
+                        
+                        HStack{
+                            VStack{
+                                Image(systemName: dish.isFaved ? "heart.fill" : "heart")
+                                    .font(.system(size: 35))
+                                    .onTapGesture{
+                                        let isFaved = dish.isFaved ?? true
+                                    }
+                            }
+
+                    }
+                        .frame(maxWidth: 380, alignment: .center)
                     }
                     .padding(.horizontal)
                 }
