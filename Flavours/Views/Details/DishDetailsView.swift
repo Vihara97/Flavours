@@ -13,6 +13,7 @@ struct DishDetailsView: View{
     @StateObject var dishModel = HomeViewModel()
     @EnvironmentObject var model : HomeViewModel
     
+    
     var body: some View {
         ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false){
                 if(dishModel.list.count > 0){
@@ -87,7 +88,7 @@ struct DishDetailsView: View{
 
 struct DishDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-       DishDetailsView()
+        DishDetailsView()
         .environmentObject(HomeViewModel())
     }
 }

@@ -19,7 +19,7 @@ struct TabBar: View {
                     Text("Home")
                 }
             
-            DishCardView()
+            SignUpView()
                 .tabItem {
                     Image(systemName: "heart")
                     Text("Favourites")

@@ -9,8 +9,11 @@ import SwiftUI
 import Firebase
 
 struct SignUpView: View {
+
     @State private var email = ""
     @State private var password = ""
+    @State private var confirmPassword = ""
+
     
     var body: some View {
         ZStack{
@@ -42,6 +45,12 @@ struct SignUpView: View {
                     .frame(width: 350, height: 1)
                     .foregroundColor(.black)
                 
+                SecureField("Confirm Password", text:$confirmPassword)
+                    .foregroundColor(.black)
+                
+                Rectangle()
+                    .frame(width: 350, height: 1)
+                    .foregroundColor(.black)
                 
                 Button {
                     register()
@@ -86,12 +95,21 @@ struct SignUpView: View {
     }
     
     func register(){
-        Auth.auth().createUser(withEmail: email, password: password){result, error in
-            if error != nil{
-                print(error!.localizedDescription)
+        if(password == confirmPassword){
+            Auth.auth().createUser(withEmail: email, password: password){result, error in
+                if error != nil{
+                    print(error!.localizedDescription)
+                }
+                
             }
+        }else{
+            let alert = UIAlertController(title: "Alert", message: "Password doesn't match with confirm password!", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            alert.present(alert, animated: true, completion: nil)
             
         }
+        
     }
 }
 struct SignUpView_Previews: PreviewProvider {
