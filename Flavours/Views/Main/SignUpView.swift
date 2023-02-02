@@ -13,7 +13,10 @@ struct SignUpView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var confirmPassword = ""
-
+    @State private var showPasswordNotMatchingAlert : Bool = false
+    @State private var showSignUpSuccessAlert : Bool = false
+    @State private var showSignUpErrorAlert : Bool = false
+    @State private var showLoginErrorAlert : Bool = false
     
     var body: some View {
         ZStack{
@@ -53,7 +56,8 @@ struct SignUpView: View {
                     .foregroundColor(.black)
                 
                 Button {
-                    register()
+                    
+                        register()
                 } label: {
                     Text("Sign up")
                         .bold()
@@ -63,7 +67,15 @@ struct SignUpView: View {
                             RoundedRectangle(cornerRadius: 15, style: .circular).foregroundColor(.pink)
                         )
                 }
-                
+                .alert(isPresented: $showPasswordNotMatchingAlert){
+                    Alert(title: Text("Alert"), message: Text("Passwords are not same."))
+                }
+                .alert(isPresented: $showSignUpSuccessAlert){
+                    Alert(title: Text("Alert"), message: Text("User registration successfull."))
+                }
+                .alert(isPresented: $showSignUpErrorAlert){
+                    Alert(title: Text("Alert"), message: Text("User registration failed."))
+                }
                 .padding(.top)
                 //.offset(y: 100)
                 .contentShape(Rectangle())
@@ -74,6 +86,9 @@ struct SignUpView: View {
                     Text("Already have an account? Sign in")
                         .bold()
                         .foregroundColor(.black)
+                }
+                .alert(isPresented: $showLoginErrorAlert){
+                    Alert(title: Text("Alert"), message: Text("User Login failed."))
                 }
                 .padding(.top)
                 .offset(y: 100)
@@ -89,6 +104,7 @@ struct SignUpView: View {
         Auth.auth().signIn(withEmail: email, password: password){result, error in
             if error != nil{
                 print(error!.localizedDescription)
+                showLoginErrorAlert = true
             }
             
         }
@@ -99,17 +115,16 @@ struct SignUpView: View {
             Auth.auth().createUser(withEmail: email, password: password){result, error in
                 if error != nil{
                     print(error!.localizedDescription)
+                    showSignUpErrorAlert = true
                 }
-                
+                else{
+                    showSignUpSuccessAlert = true
+                }
             }
-        }else{
-            let alert = UIAlertController(title: "Alert", message: "Password doesn't match with confirm password!", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            alert.present(alert, animated: true, completion: nil)
-            
         }
-        
+        else{
+            showPasswordNotMatchingAlert = true
+        }
     }
 }
 struct SignUpView_Previews: PreviewProvider {
