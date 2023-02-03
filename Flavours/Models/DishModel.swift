@@ -24,7 +24,6 @@ struct Dish : Identifiable {
     let description: String
     let noOfCalories: String
     let dishCategory: Category.RawValue
-    let isFaved: Bool
     
     
 }

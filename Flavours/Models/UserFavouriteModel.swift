@@ -9,6 +9,6 @@ import Foundation
 
 struct UserFavourite : Identifiable {
     let id = UUID()
-    let userId = UUID()
-    let dishId = UUID()
+    let userId: String
+    let dishName: String
 }

@@ -7,11 +7,13 @@
 
 import SwiftUI
 import URLImage
+import Firebase
 
 struct DishDetailsView: View{
     
     @StateObject var dishModel = HomeViewModel()
     @EnvironmentObject var model : HomeViewModel
+    @State private var isPressed : Bool = false
     
     
     var body: some View {
@@ -27,7 +29,7 @@ struct DishDetailsView: View{
                             .aspectRatio(contentMode: .fill)
                         
                     }
-                    .frame(height: 500)
+                    .frame(height: 450)
                     .background(LinearGradient(gradient: Gradient(colors: [Color.gray, Color.gray]), startPoint: .top, endPoint: .bottom))
                     
                     
@@ -65,11 +67,20 @@ struct DishDetailsView: View{
                         
                         HStack{
                             VStack{
-                                Image(systemName: dish.isFaved ? "heart.fill" : "heart")
-                                    .font(.system(size: 35))
-                                    .onTapGesture{
-                                        let isFaved = dish.isFaved ?? true
-                                    }
+                                
+                                Button {
+                                    
+                                } label: {
+                                    Image(systemName: "heart.fill")
+                                        .font(.system(size: 35))
+                                        .foregroundColor(isPressed ? Color.red : Color.black)
+                                        .onTapGesture{
+                                            self.isPressed.toggle()
+                                            addData(userId: Firebase.Auth.auth().currentUser!.uid, dishName: dish.name)
+                                        }
+                                }
+                                
+
                             }
 
                     }
@@ -83,6 +94,23 @@ struct DishDetailsView: View{
         .environmentObject(dishModel)
 
 
+    }
+    
+    //add dish to favourites
+    func addData(userId : String, dishName : String){
+        //get a reference to the db
+        let db = Firestore.firestore()
+        
+        //add documents to db collection
+        db.collection("UserFavourites").addDocument(data: ["userId": userId, "dishName": dishName ]) { error in
+            if error == nil {
+                
+            }
+            else{
+                
+            }
+        }
+        
     }
 }
 

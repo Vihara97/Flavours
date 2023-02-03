@@ -13,8 +13,6 @@ class HomeViewModel : ObservableObject {
     @Published var list = [Dish]()
     
     init() {
-        
-        
         //get a reference to the db
         let db = Firestore.firestore()
         
@@ -30,8 +28,7 @@ class HomeViewModel : ObservableObject {
                                         image: doc["image"] as? String ?? "",
                                         description: doc["description"] as? String ?? "",
                                         noOfCalories: doc["noOfCalories"] as? String ?? "",
-                                        dishCategory: doc["dishCategory"] as? String ?? "",
-                                        isFaved: doc["isFaved"] as? Bool ?? false)
+                                        dishCategory: doc["dishCategory"] as? String ?? "")
                         }
                     }
                     

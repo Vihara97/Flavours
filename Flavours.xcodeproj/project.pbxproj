@@ -10,6 +10,7 @@
 		DC77E41A298448A2004DEDE0 /* DishCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC77E419298448A2004DEDE0 /* DishCardView.swift */; };
 		DCA5170F29827B7A00CC9B28 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5170E29827B7A00CC9B28 /* HomeView.swift */; };
 		DCA5171429827CD800CC9B28 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5171329827CD800CC9B28 /* SignUpView.swift */; };
+		DCA6BA31298CE516002A921F /* FavouritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BA30298CE516002A921F /* FavouritesViewModel.swift */; };
 		DCA99CDC2983C7390014563A /* DishDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA99CDB2983C7390014563A /* DishDetailsView.swift */; };
 		DCA99CE42983C79E0014563A /* DishModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA99CE32983C79E0014563A /* DishModel.swift */; };
 		DCB4DB412973F14600C32CF8 /* FlavoursApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB4DB402973F14600C32CF8 /* FlavoursApp.swift */; };
@@ -53,6 +54,7 @@
 		DC77E419298448A2004DEDE0 /* DishCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCardView.swift; sourceTree = "<group>"; };
 		DCA5170E29827B7A00CC9B28 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DCA5171329827CD800CC9B28 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		DCA6BA30298CE516002A921F /* FavouritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewModel.swift; sourceTree = "<group>"; };
 		DCA99CDB2983C7390014563A /* DishDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailsView.swift; sourceTree = "<group>"; };
 		DCA99CE32983C79E0014563A /* DishModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishModel.swift; sourceTree = "<group>"; };
 		DCB4DB3D2973F14600C32CF8 /* Flavours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flavours.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				DCD5FFC92984098F0082D440 /* HomeViewModel.swift */,
+				DCA6BA30298CE516002A921F /* FavouritesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				DCD5FFCA2984098F0082D440 /* HomeViewModel.swift in Sources */,
 				DCA99CDC2983C7390014563A /* DishDetailsView.swift in Sources */,
 				DCA5170F29827B7A00CC9B28 /* HomeView.swift in Sources */,
+				DCA6BA31298CE516002A921F /* FavouritesViewModel.swift in Sources */,
 				DCBC29A3298C2365000BE524 /* UserFavouriteModel.swift in Sources */,
 				DCBC29A8298C23C5000BE524 /* UserModel.swift in Sources */,
 				DCCDD77A2986FC8C00EE533C /* DishesListView.swift in Sources */,
