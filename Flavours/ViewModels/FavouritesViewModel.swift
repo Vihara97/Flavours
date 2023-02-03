@@ -13,6 +13,61 @@ class FavouritesViewModel : ObservableObject {
     @Published var favList = [Dish]()
     @Published var userFavList = [UserFavourite]()
     
+    init() {
+        
+        //get a reference to the db
+        let db = Firestore.firestore()
+        
+        //read documents to get user favourite data
+        db.collection("UserFavourites").whereField("userId", isEqualTo: Firebase.Auth.auth().currentUser?.uid as Any).getDocuments { snapshot, error in
+            if error == nil {
+                
+                if let snapshot = snapshot{
+                    
+                    DispatchQueue.main.async {
+                        self.userFavList = snapshot.documents.map { doc in
+                            return UserFavourite(userId: doc["userId"] as? String ?? "",
+                                                 dishName: doc["dishName"] as? String ?? "")
+                        }
+                    }
+                    
+                }
+            }
+            else{
+                
+            }
+        }
+        
+        
+        //loop through user favourites
+        for item in userFavList {
+            
+            //read documents to get favourite dish details
+            db.collection("Dishes").whereField("name", isEqualTo: item.dishName).getDocuments { snapshot, error in
+                if error == nil {
+                    
+                    if let snapshot = snapshot{
+                        
+                        DispatchQueue.main.async {
+                            self.favList = snapshot.documents.map { doc in
+                                return Dish(name: doc["name"] as? String ?? "",
+                                            image: doc["image"] as? String ?? "",
+                                            description: doc["description"] as? String ?? "",
+                                            noOfCalories: doc["noOfCalories"] as? String ?? "",
+                                            dishCategory: doc["dishCategory"] as? String ?? "")
+                            }
+                        }
+                        
+                    }
+                }
+                else{
+                    
+                }
+            }
+        }
+    
+    }
+    
 
     func addData(userId : String, dishName : String){
         //get a reference to the db
@@ -56,35 +111,6 @@ class FavouritesViewModel : ObservableObject {
         
     }
     
-    func getUserFavouriteDishesData() {
-        //get a reference to the db
-        let db = Firestore.firestore()
-        
-        for item in userFavList {
-            //read documents
-            db.collection("Dishes").whereField("name", isEqualTo: item.dishName).getDocuments { snapshot, error in
-                if error == nil {
-                    
-                    if let snapshot = snapshot{
-                        
-                        DispatchQueue.main.async {
-                            self.favList = snapshot.documents.map { doc in
-                                return Dish(name: doc["name"] as? String ?? "",
-                                            image: doc["image"] as? String ?? "",
-                                            description: doc["description"] as? String ?? "",
-                                            noOfCalories: doc["noOfCalories"] as? String ?? "",
-                                            dishCategory: doc["dishCategory"] as? String ?? "")
-                            }
-                        }
-                        
-                    }
-                }
-                else{
-                    
-                }
-            }
-        }
-    
-    }
+
     
 }

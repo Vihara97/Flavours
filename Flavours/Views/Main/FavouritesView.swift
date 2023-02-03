@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct FavouritesView: View {
+    
+    @EnvironmentObject var favModel : FavouritesViewModel
+    
     var body: some View {
         NavigationView {
-            Text("Favourites")
-                .padding()
-                .navigationTitle("Favourites")
+            ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false) {
+                FavouriteDishesListView(favDishModel: favModel)
+            }
+            .navigationTitle("Favourites")
         }
     }
 }
@@ -20,5 +24,6 @@ struct FavouritesView: View {
 struct FavouritesView_Previews: PreviewProvider {
     static var previews: some View {
         FavouritesView()
+            .environmentObject(FavouritesViewModel())
     }
 }

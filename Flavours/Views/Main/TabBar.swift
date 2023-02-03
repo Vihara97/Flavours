@@ -10,6 +10,7 @@ import SwiftUI
 struct TabBar: View {
     
     @EnvironmentObject var model : HomeViewModel
+    @EnvironmentObject var favModel : FavouritesViewModel
     
     var body: some View {
         TabView{
@@ -17,13 +18,13 @@ struct TabBar: View {
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
-                }
+                }.environmentObject(model)
             
-            SignUpView()
+            FavouritesView()
                 .tabItem {
                     Image(systemName: "heart")
                     Text("Favourites")
-                }
+                }.environmentObject(favModel)
         }
     }
 }
@@ -32,6 +33,7 @@ struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()
             .environmentObject(HomeViewModel())
+            .environmentObject(FavouritesViewModel())
     }
 }
 

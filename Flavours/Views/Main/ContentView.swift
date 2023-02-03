@@ -10,11 +10,13 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject var model = HomeViewModel()
+    @StateObject var favModel = FavouritesViewModel()
     
     var body: some View {
         VStack {
             TabBar()
                 .environmentObject(model)
+                .environmentObject(favModel)
         }
         
     }
