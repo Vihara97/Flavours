@@ -20,7 +20,7 @@ struct DishDetailsView: View{
         ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false){
                 if(dishModel.list.count > 0){
                     
-                    let dish = dishModel.list[0]
+                    let dish = dishModel.list[9]
                     let imgUrl: URL = URL(string: dish.image)!
                     
                     URLImage(imgUrl) { image in

@@ -31,6 +31,7 @@
 		DCD0E127298D8D8600A58E53 /* FavouriteDishesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD0E126298D8D8600A58E53 /* FavouriteDishesListView.swift */; };
 		DCD3BC362982F7FB00AFA899 /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD3BC352982F7FB00AFA899 /* FavouritesView.swift */; };
 		DCD54A662982AA10001F4F68 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD54A652982AA10001F4F68 /* TabBar.swift */; };
+		DCD5C9DD298E49FB00C23163 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD5C9DC298E49FB00C23163 /* SignInView.swift */; };
 		DCD5FFCA2984098F0082D440 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD5FFC92984098F0082D440 /* HomeViewModel.swift */; };
 		DCE8FF4629818BED00DA6F07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCBADC54297F1FDB00CBD510 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		DCD0E126298D8D8600A58E53 /* FavouriteDishesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteDishesListView.swift; sourceTree = "<group>"; };
 		DCD3BC352982F7FB00AFA899 /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
 		DCD54A652982AA10001F4F68 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		DCD5C9DC298E49FB00C23163 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		DCD5FFC92984098F0082D440 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +161,7 @@
 				DCA5171329827CD800CC9B28 /* SignUpView.swift */,
 				DCD54A652982AA10001F4F68 /* TabBar.swift */,
 				DCD3BC352982F7FB00AFA899 /* FavouritesView.swift */,
+				DCD5C9DC298E49FB00C23163 /* SignInView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				DCA5170F29827B7A00CC9B28 /* HomeView.swift in Sources */,
 				DCD0E127298D8D8600A58E53 /* FavouriteDishesListView.swift in Sources */,
 				DCA6BA31298CE516002A921F /* FavouritesViewModel.swift in Sources */,
+				DCD5C9DD298E49FB00C23163 /* SignInView.swift in Sources */,
 				DCBC29A3298C2365000BE524 /* UserFavouriteModel.swift in Sources */,
 				DCBC29A8298C23C5000BE524 /* UserModel.swift in Sources */,
 				DCD0E11F298D80CC00A58E53 /* FavouriteDishDetailsView.swift in Sources */,

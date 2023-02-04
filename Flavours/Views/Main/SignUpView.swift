@@ -19,97 +19,87 @@ struct SignUpView: View {
     @State private var showLoginErrorAlert : Bool = false
     
     var body: some View {
-        ZStack{
-            Color.white
-            
-            RoundedRectangle(cornerRadius: 30, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
-                .foregroundColor(.pink)
-                .frame(width: 1000, height: 400)
-                .rotationEffect(.degrees(135))
-                .offset(y: -350)
-            
-            VStack(spacing: 20){
-                Text("Welcome")
-                    .foregroundColor(.black)
-                    .font(.system(size: 40, weight: .bold, design: .rounded))
-                    .offset(x: -90,y: -150)
+        NavigationView{
+            ZStack{
+                Color.white
                 
-                TextField("Email", text: $email)
-                    .foregroundColor(.black)
+                RoundedRectangle(cornerRadius: 30, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.pink)
+                    .frame(width: 1000, height: 400)
+                    .rotationEffect(.degrees(135))
+                    .offset(y: -350)
                 
-                Rectangle()
-                    .frame(width: 350, height: 1)
-                    .foregroundColor(.black)
-                
-                SecureField("Password", text:$password)
-                    .foregroundColor(.black)
-                
-                Rectangle()
-                    .frame(width: 350, height: 1)
-                    .foregroundColor(.black)
-                
-                SecureField("Confirm Password", text:$confirmPassword)
-                    .foregroundColor(.black)
-                
-                Rectangle()
-                    .frame(width: 350, height: 1)
-                    .foregroundColor(.black)
-                
-                Button {
+                VStack(spacing: 20){
+                    Text("Welcome")
+                        .foregroundColor(.black)
+                        .font(.system(size: 40, weight: .bold, design: .rounded))
+                        .offset(x: -90,y: -150)
                     
-                        register()
-                } label: {
-                    Text("Sign up")
-                        .bold()
+                    TextField("Email", text: $email)
                         .foregroundColor(.black)
-                        .frame(width: 200, height: 40)
-                        .background(
-                            RoundedRectangle(cornerRadius: 15, style: .circular).foregroundColor(.pink)
-                        )
-                }
-                .alert(isPresented: $showPasswordNotMatchingAlert){
-                    Alert(title: Text("Alert"), message: Text("Passwords are not same."))
-                }
-                .alert(isPresented: $showSignUpSuccessAlert){
-                    Alert(title: Text("Alert"), message: Text("User registration successfull."))
-                }
-                .alert(isPresented: $showSignUpErrorAlert){
-                    Alert(title: Text("Alert"), message: Text("User registration failed."))
-                }
-                .padding(.top)
-                //.offset(y: 100)
-                .contentShape(Rectangle())
+                    
+                    Rectangle()
+                        .frame(width: 350, height: 1)
+                        .foregroundColor(.black)
+                    
+                    SecureField("Password", text:$password)
+                        .foregroundColor(.black)
+                    
+                    Rectangle()
+                        .frame(width: 350, height: 1)
+                        .foregroundColor(.black)
+                    
+                    SecureField("Confirm Password", text:$confirmPassword)
+                        .foregroundColor(.black)
+                    
+                    Rectangle()
+                        .frame(width: 350, height: 1)
+                        .foregroundColor(.black)
+                    
+                    Button {
+                        
+                            register()
+                    } label: {
+                        Text("Sign up")
+                            .bold()
+                            .foregroundColor(.black)
+                            .frame(width: 200, height: 40)
+                            .background(
+                                RoundedRectangle(cornerRadius: 15, style: .circular).foregroundColor(.pink)
+                            )
+                    }
+                    .alert(isPresented: $showPasswordNotMatchingAlert){
+                        Alert(title: Text("Alert"), message: Text("Passwords are not same."))
+                    }
+                    .alert(isPresented: $showSignUpSuccessAlert){
+                        Alert(title: Text("Alert"), message: Text("User registration successfull."))
+                    }
+                    .alert(isPresented: $showSignUpErrorAlert){
+                        Alert(title: Text("Alert"), message: Text("User registration failed."))
+                    }
+                    .padding(.top)
+                    //.offset(y: 100)
+                    .contentShape(Rectangle())
+                    
+
+                    NavigationLink(destination: SignInView()){
+                        VStack{
+                            Text("Already have an account? Sign in")
+                        }
+
+                    }
+
+
                 
-                Button {
-                    login()
-                } label: {
-                    Text("Already have an account? Sign in")
-                        .bold()
-                        .foregroundColor(.black)
                 }
-                .alert(isPresented: $showLoginErrorAlert){
-                    Alert(title: Text("Alert"), message: Text("User Login failed."))
-                }
-                .padding(.top)
-                .offset(y: 100)
-                .contentShape(Rectangle())
+                .frame(width: 350)
+                
             }
-            .frame(width: 350)
-            
+            .ignoresSafeArea()
         }
-        .ignoresSafeArea()
+ 
     }
-    
-    func login(){
-        Auth.auth().signIn(withEmail: email, password: password){result, error in
-            if error != nil{
-                print(error!.localizedDescription)
-                showLoginErrorAlert = true
-            }
-            
-        }
-    }
-    
+        
     func register(){
         if(password == confirmPassword){
             Auth.auth().createUser(withEmail: email, password: password){result, error in

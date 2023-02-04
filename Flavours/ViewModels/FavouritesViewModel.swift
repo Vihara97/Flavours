@@ -19,7 +19,7 @@ class FavouritesViewModel : ObservableObject {
         let db = Firestore.firestore()
         
         //read documents to get user favourite data
-        db.collection("UserFavourites").whereField("userId", isEqualTo: Firebase.Auth.auth().currentUser?.uid as Any).getDocuments { snapshot, error in
+        db.collection("UserFavourites").whereField("userId", isEqualTo: "9HogqJpDoca1etIGlFEOlVDxfBy1" as Any).getDocuments { snapshot, error in
             if error == nil {
                 
                 if let snapshot = snapshot{
@@ -43,7 +43,7 @@ class FavouritesViewModel : ObservableObject {
         for item in userFavList {
             
             //read documents to get favourite dish details
-            db.collection("Dishes").whereField("name", isEqualTo: item.dishName).getDocuments { snapshot, error in
+            db.collection("Dishes").getDocuments { snapshot, error in
                 if error == nil {
                     
                     if let snapshot = snapshot{

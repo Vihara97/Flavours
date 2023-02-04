@@ -14,9 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            TabBar()
-                .environmentObject(model)
-                .environmentObject(favModel)
+SignUpView()
         }
         
     }

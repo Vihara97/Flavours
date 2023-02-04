@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TabBar: View {
     
+    
     @EnvironmentObject var model : HomeViewModel
     @EnvironmentObject var favModel : FavouritesViewModel
     
